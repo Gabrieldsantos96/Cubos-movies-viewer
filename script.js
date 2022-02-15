@@ -95,7 +95,7 @@ function popularFilmes (pagina) {
       }
       
     )
-    
+    input.value = '';
     popularFilmes(i);
     
     });
