@@ -172,16 +172,16 @@ const abrirModal = async(id) =>  {
   const imagemModal = document.querySelector('.modal__img');
   const textoModal = document.querySelector('.modal__description');
   const votosModal = document.querySelector('.modal__average');
-  const generos = document.querySelector('.modal__genre');
+  const generos = document.querySelector('.modal__genres');
   tituloModal.textContent = title;
   imagemModal.src = (!backdrop_path) ? 'https://via.placeholder.com/320?text=sem+foto' : backdrop_path;
   textoModal.textContent = overview;
   votosModal.textContent = vote_average;
-  generos.textContent = '';
+  generos.innerHTML = '';
   for (genre of genres) {
-    generos.textContent += `${genre.name} `;
+  generos.innerHTML += `<span class='modal__genre'>${genre.name}</span>`;
   }
-  
+ 
  
   
 }
