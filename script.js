@@ -131,11 +131,13 @@ const pegarHighlits = async () => {
   votacao.textContent = vote_average;
 
   const lancamento = document.querySelector('.highlight__launch');
-  lancamento.textContent = String(release_date);
+  const data = new Date(release_date)
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  lancamento.textContent = data.toLocaleDateString('pt-BR',options);
 
   const descricao = document.querySelector('.highlight__description');
   descricao.textContent = overview;
-
+  console.log(overview);
   
   const generos = document.querySelector('.highlight__genres');
   for ( genre of genres ) {
